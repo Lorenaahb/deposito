@@ -1,10 +1,10 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package entidadFinanciera;
 
+/**
+ * Clase que representa a una cuenta
+ * @author lorena huete
+ */
 
 public class CCuenta {
 
@@ -65,18 +65,32 @@ public class CCuenta {
 		return ERRORCANTIDADNEGATIVA;
 	}
 
+	/**
+	 * Devuelve el estado de la cuenta
+	 * @return saldo de la cuenta
+	 */
 	public double estado(){
         return this.saldo;
     }
 
-    public void ingresar(double cantidad) throws Exception
+    /**
+     * Ingresa una cantidad en la cuenta
+     * @param cantidad a ingresar
+     * @throws Exception si la cantidad es negativa
+     */
+	public void ingresar(double cantidad) throws Exception
     {
         if (cantidad<0)
             throw new Exception(ERRORCANTIDADNEGATIVA);
         saldo = saldo + cantidad;
     }
 
-    public void retirar(double cantidad) throws Exception
+    /**
+     * Retira una cantidad
+     * @param cantidad a retirar
+     * @throws Exception si la cantidad es 0 o negativa
+     */
+	public void retirar(double cantidad) throws Exception
     {
         if (cantidad <= 0)
             throw new Exception ("ERRORCANTIDADNEGATIVA");
